@@ -1,1 +1,356 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");:root{--clr-primary-red:#ff7a7a;--clr-primary-green:#38cc8c;--clr-accent-blue:#6055a5;--clr-neutral-darkblue:#3e3c49;--clr-neutral-grayishblue:#b9b6d3;--fnt-size-all:16px;--fnt-family-pop:"Poppins",sans-serif;--fnt-weight-400:400;--fnt-weight-500:500;--fnt-weight-600:600;--fnt-weight-700:700}*{position:relative;box-sizing:border-box;font-family:var(--fnt-family-pop);margin:0;padding:0}body{height:130vh;background-image:url(../images/bg-intro-mobile.png);background-color:var(--clr-primary-red);font-size:var(--fnt-size-all);display:flex;align-items:center;justify-content:space-evenly;flex-flow:column nowrap}.intro-head{max-width:90%;padding:1rem}.intro-head h1{margin-bottom:1rem;color:#fff;font-size:1.5rem;text-align:center}.intro-head h2{color:#fff;font-size:.9rem;font-weight:400;line-height:1.8;text-align:center}.component-container{max-width:90%}.component{display:flex;justify-content:space-between;align-items:center;flex-flow:column nowrap}.component-head{background-color:var(--clr-accent-blue);width:100%;padding:1rem 4rem;border-radius:.6rem;box-shadow:0 10px 0 rgba(62,60,73,.24);margin-bottom:1.5rem;color:#fff;font-size:.7rem}.component-head-tit{font-weight:400;text-align:center}.component-head .bold{font-weight:700}#component-form{width:100%;padding:1rem;background-color:#fff;border-radius:.6rem;box-shadow:0 10px 0 rgba(62,60,73,.24)}.component-form-fields{border:none}.component-form-field{width:100%;height:3rem;padding:1rem;border:1px solid #ddd;border-radius:.3rem;font-weight:600}.error{border-color:var(--clr-primary-red);color:var(--clr-primary-red);text-align:right}.field-error-icon{position:absolute;top:.8rem;right:1rem}.hidden-icon{display:none}.component-form-field-err{margin-bottom:1rem;color:var(--clr-primary-red);text-align:right;font-size:.7rem;font-style:italic}.component-form-btn{background-color:var(--clr-primary-green);width:100%;height:3rem;padding:1rem;margin-bottom:1rem;border-radius:.3rem;box-shadow:0 5px 0 #34ad78;border:none;color:#fff;font-weight:600;letter-spacing:1.5px}.component-form-btn:hover{cursor:pointer;background-color:#44e9a1}.component-form-btnlbl{display:block;width:100%;padding:0 1.5rem;color:var(--clr-neutral-grayishblue);font-size:.7rem;text-align:center}.terms-and-serv{color:var(--clr-primary-red);font-weight:700;text-decoration:none}@media screen and (max-height:450px){body{height:220vh}}@media screen and (min-width:576px) and (max-width:768px){body{height:100vh}.intro-head{max-width:452px;padding:1rem}}@media screen and (min-width:576px) and (max-width:768px) and (max-height:450px){body{height:220vh}.intro-head{max-width:452px;padding:1rem}}@media screen and (min-width:992px){body{height:100vh;background-image:url(../images/bg-intro-desktop.png);display:flex;align-items:center;justify-content:space-around;flex-flow:row nowrap}.intro-head{min-width:45%;flex:0}.intro-head h1{margin-bottom:1.5rem;font-size:2.2rem;text-align:left;line-height:1.2}.intro-head h2{font-size:1rem;font-weight:400;line-height:1.8;text-align:left}.component-container{min-width:35%;flex:0}.component-head{padding:1rem 4rem;margin-bottom:2rem;font-size:.9rem}#component-form{padding:1.5rem}.component-form-field{height:3.5rem;padding:1rem;font-size:1rem}.component-form-field-err{margin-bottom:1.5rem;font-size:.8rem}.component-form-btn{height:3.5rem;padding:1.2rem;font-size:1rem}}@media screen and (min-width:1200px){body{justify-content:space-evenly}.intro-head{min-width:35%;margin-left:6rem;flex:0}.intro-head h1{margin-bottom:1.8rem;font-size:4rem}.intro-head h2{font-size:1.2rem;font-weight:400;line-height:1.6;text-align:left}.component-container{min-width:35%;margin-right:6rem;flex:0}.component-head{padding:1.5rem 4rem;margin-bottom:2.5rem}#component-form{padding:3rem}.component-form-field{height:4rem;font-size:1.2rem}.component-form-field-err{margin-bottom:2.5rem;font-size:1rem}.component-form-btn{height:4rem;font-size:1.2rem}}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /* colors */
+    --clr-primary-red: hsl(0, 100%, 74%);
+    --clr-primary-green: hsl(154, 59%, 51%);
+    --clr-accent-blue: hsl(248, 32%, 49%);
+    --clr-neutral-darkblue: hsl(249, 10%, 26%);
+    --clr-neutral-grayishblue: hsl(246, 25%, 77%);
+    /* typography */
+    --fnt-size-all: 16px;
+    --fnt-family-pop: 'Poppins', sans-serif;
+    --fnt-weight-400: 400;
+    --fnt-weight-500: 500;
+    --fnt-weight-600: 600;
+    --fnt-weight-700: 700;
+}
+
+/*
+Breakpoint 	        Class infix 	Dimensions
+X-Small 	        None 	        <576px
+Small 	            sm 	            ≥576px
+Medium 	            md 	            ≥768px
+Large 	            lg 	            ≥992px
+Extra large 	    xl 	            ≥1200px
+Extra extra large 	xxl 	        ≥1400px
+*/
+
+* {
+    position: relative;
+    box-sizing: border-box;
+    
+    font-family: var(--fnt-family-pop); 
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 130vh;
+    background-image: url("./../images/bg-intro-mobile.png");
+    background-color: var(--clr-primary-red);
+    font-size: var(--fnt-size-all);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: column nowrap;
+}
+
+/* header */
+.intro-head {
+    /* in flex body */
+    max-width: 90%;
+    padding: 1rem;
+}
+
+.intro-head h1 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.intro-head h2 {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* main */
+.component-container {
+    /* in flex body */
+    /* background-color: #fff; */
+    max-width: 90%;
+}
+
+/* form */
+.component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column nowrap;
+
+    /* min-height: 31rem; */
+}
+
+/* form header */
+.component-head {
+    /* in flex component */
+    background-color: var(--clr-accent-blue);
+    width: 100%;
+    padding: 1rem 4rem;
+    border-radius: 0.6rem;
+    box-shadow: 0px 10px 0px hsla(249, 10%, 26%, 0.24);
+    margin-bottom: 1.5rem;
+
+    color: #fff;
+    font-size: 0.7rem;
+}
+
+.component-head-tit {
+    font-weight: 400;
+    text-align: center;
+}
+
+.component-head .bold{
+    font-weight: 700;
+}
+
+/* form fields */
+#component-form {
+    /* in flex component */
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.6rem;
+    box-shadow: 0px 10px 0px hsla(249, 10%, 26%, 0.24);
+}
+
+.component-form-fields {
+    border: none;
+}
+
+.component-form-field {
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 0.3rem;
+
+    font-weight: 600;
+}
+
+.error {
+    border-color: var(--clr-primary-red);
+    color: var(--clr-primary-red);
+    text-align: right;
+}
+
+.field-error-icon {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+}
+
+.hidden-icon {
+    display: none;
+}
+
+.component-form-field-err {
+    margin-bottom: 1rem;
+
+    color: var(--clr-primary-red);
+    text-align: right;
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+.component-form-btn {
+    background-color: var(--clr-primary-green);
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    box-shadow: 0px 5px 0px hsl(154, 54%, 44%);
+
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.component-form-btn:hover {
+    cursor: pointer;
+    background-color: hsl(154, 79%, 59%);
+}
+
+.component-form-btnlbl {
+    display: block;
+    width: 100%;
+    padding: 0px 1.5rem;
+
+    color: var(--clr-neutral-grayishblue);
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.terms-and-serv {
+    color: var(--clr-primary-red);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media screen and (max-height: 450px) {
+    body {
+        height: 220vh;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    body {
+        height: 100vh;
+    }
+
+    .intro-head {
+        /* in flex body */
+        max-width: 452px;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) and (max-height: 450px) {
+    body {
+        height: 220vh;
+    }
+
+    .intro-head {
+        /* in flex body */
+        max-width: 452px;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        height: 100vh;
+        background-image: url("./../images/bg-intro-desktop.png");
+    
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-flow: row nowrap;
+    }
+
+    .intro-head {
+        /* in flex body */
+        min-width: 45%;
+        flex: 0;
+    }
+
+    .intro-head h1 {
+        margin-bottom: 1.5rem;
+        font-size: 2.2rem;
+        text-align: left;
+        line-height: 1.2;
+    }
+    
+    .intro-head h2 {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .component-container {
+        /* in flex body */
+        min-width: 35%;
+        flex: 0;
+    }
+
+    .component-head {
+        /* in flex component */
+        padding: 1rem 4rem;
+        margin-bottom: 2rem;
+    
+        font-size: 0.9rem;
+    }
+    
+    #component-form {
+        /* in flex component */
+        padding: 1.5rem;
+    }
+
+    .component-form-field {
+        height: 3.5rem;
+        padding: 1rem;
+
+        font-size: 1rem;
+    }
+
+    .component-form-field-err {
+        margin-bottom: 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .component-form-btn {
+        height: 3.5rem;
+        padding: 1.2rem;
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    body {
+        justify-content: space-evenly;
+    }
+
+    .intro-head {
+        /* in flex body */
+        min-width: 35%;
+        margin-left: 6rem;
+        flex: 0;
+    }
+
+    .intro-head h1 {
+        margin-bottom: 1.8rem;
+        font-size: 4rem;
+    }
+    
+    .intro-head h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .component-container {
+        /* in flex body */
+        min-width: 35%;
+        margin-right: 6rem;
+        flex: 0;
+    }
+
+    .component-head {
+        /* in flex component */
+        padding: 1.5rem 4rem;
+        margin-bottom: 2.5rem;
+    }
+
+    #component-form {
+        /* in flex component */
+        padding: 3rem;
+    }
+
+    .component-form-field {
+        height: 4rem;
+        font-size: 1.2rem;
+    }
+
+    .component-form-field-err {
+        margin-bottom: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .component-form-btn {
+        height: 4rem;
+        /* padding: 1.2rem; */
+        font-size: 1.2rem;
+    }
+
+}
